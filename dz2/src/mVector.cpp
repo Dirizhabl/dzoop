@@ -54,7 +54,7 @@ T mVector<T>::pop_back()
     if (_size==cap)
     {
         _capacity = cap;
-        P = static_cast<int*>(realloc(P, _capacity*sizeof(T)));
+        P = static_cast<T*>(realloc(P, _capacity*sizeof(T)));
         //std::cout << std::endl << _size*sizeof(T) << std::endl;
     }
     

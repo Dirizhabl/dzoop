@@ -1,9 +1,9 @@
 #include <iostream>
-#include "mVector.hpp"
+#include "myVector.hpp"
 
 int main()
 {
-	mVector<int> *numbers = new mVector<int>();
+	myVector *numbers = new myVector();
 	
 	for (int i = 1; i <= 10; i++)
 	{
@@ -12,7 +12,7 @@ int main()
 	std::cout << std::endl;
 	numbers->print();
 
-	mVector<int> *numbers_copy = new mVector<int>();
+	myVector *numbers_copy = new myVector();
 
 	*numbers_copy = *numbers;
 	
