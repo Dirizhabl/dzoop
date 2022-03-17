@@ -5,6 +5,7 @@
 
 DynamicStack::DynamicStack(/* args */)
 {
+    
 }
 
 DynamicStack::DynamicStack(const DynamicStack &S): container{S.container}
