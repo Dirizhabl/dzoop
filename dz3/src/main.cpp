@@ -14,8 +14,8 @@ void zad3();
 int main()
 {
 	//zad1();
-	//zad2();
-	zad3();
+	zad2();
+	//zad3();
 	return 0;
 }
 
@@ -72,7 +72,7 @@ void zad2()
 		student_temp[i] = students[i].calculateTotalScore();
 	}
 	
-	int rez = std::count_if(student_temp, student_temp + num_of_students*sizeof(int),[student_temp](int rez){return rez > student_temp[0];});
+	int rez = std::count_if(student_temp + 1, student_temp + num_of_students,[student_temp](int student_sum){return student_sum > student_temp[0];});
 
 
 	std::cout << rez << std::endl;
