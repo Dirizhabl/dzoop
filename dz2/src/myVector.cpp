@@ -17,6 +17,11 @@ myVector::myVector(const myVector& vec)
     _size = vec.get_size();
     _capacity = vec.get_capacity();
     P = new int[_capacity];
+    for (size_t i = 0; i < _size; ++i)
+    {
+        P[i] = vec.P[i];
+    }
+    
 }
 
 

@@ -4,7 +4,7 @@
 
 int main()
 {
-	/*myVector *numbers = new myVector();
+	myVector *numbers = new myVector();
 	
 	for (int i = 1; i <= 10; i++)
 	{
@@ -13,18 +13,17 @@ int main()
 	std::cout << std::endl;
 	numbers->print();
 
-	myVector *numbers_copy = new myVector();
+	myVector *numbers_copy = new myVector(*numbers);
 
-	*numbers_copy = *numbers;
 	
 	while (!numbers_copy->empty())
 	{
 		std::cout << numbers_copy->pop_back() << " ";
 		//numbers_copy->pop_back();
 	}
-	std::cout << std::endl;*/
+	std::cout << std::endl;
 
-	DynamicStack *stack = new DynamicStack();
+	/*DynamicStack *stack = new DynamicStack{};
 
 	for (size_t i = 1; i <= 10; i++)
 	{
@@ -32,14 +31,15 @@ int main()
 	}
 
 	stack->print();
-	DynamicStack *stack_copy = new DynamicStack(*stack);
+	DynamicStack stack_copy(*stack);
 
-	while (!stack_copy->empty())
+	while (!stack_copy.empty())
 	{
-		std::cout << stack_copy->pop() << " " ;
+		std::cout << stack_copy.pop() << " " ;
 	}
 	std::cout << std::endl;
 	
+	delete stack;*/
 	
 	return 0;
 }
