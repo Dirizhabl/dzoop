@@ -14,7 +14,7 @@ void zad3();
 int main()
 {
 	//zad1();
-	zad2();
+	//zad2();
 	//zad3();
 	return 0;
 }
@@ -94,7 +94,7 @@ void zad3()
 		vec.push_back(temp);
 	}
 
-	for (auto &&i : vec)
+	for (auto &i : vec)
 	{
 		std::cout << i << " ";
 	}
