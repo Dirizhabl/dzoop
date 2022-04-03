@@ -14,7 +14,7 @@ CDLL::CDLL(const CDLL& c):head{c.head}, tail{c.tail}
 
 CDLL::~CDLL()
 {
-    while (!empty())
+    while (head!= nullptr)
     {
         remove_from_head();
     }
@@ -66,15 +66,21 @@ void CDLL::append(double val)
 
 double CDLL::remove_from_head()
 {
-    double val;
+    double val = head->value;
     if(!empty())
     {
         Node *old_head = head;
-        val = old_head->value;
+        if(head->next == head)
+        {
+            head = nullptr;
+            delete old_head;
+            return val;
+        }
 
         head = head->next;
         head->prev = tail;
         tail->next = head;
+        
         delete old_head;
     }
     return val;
@@ -82,16 +88,21 @@ double CDLL::remove_from_head()
 
 double CDLL::remove_from_tail()
 {
-    double val;
+    double val = tail->value;
     if(!empty())
     {
         Node *old_tail = tail;
+        if(tail->next == tail)
+        {
+            head = nullptr;
+            delete old_tail;
+            return val;
+        }
         val = old_tail->value;
 
         tail = tail->prev;
         tail->next = head;
         head->prev = tail;
-
         delete old_tail;
     }
     return val;
@@ -110,11 +121,11 @@ void CDLL::print() const
     if (!empty())
     {
         it->print();
-        while (it->next != head)
+        do
         {
             it = it->next;
             it->print();
-        }
+        }while (it->next != head);
         std::cout << "------------------------------------" << std::endl;
     }
 }
@@ -123,11 +134,11 @@ void CDLL::sort() const
 {
     Node *it = head;
     std::vector<double> vec;
-    while(it->next!=head)
+    do
     {  
         vec.push_back(it->value);
         it = it->next;
-    }    
+    }while(it->next!=head);
     
     std::sort(vec.begin(), vec.end());
 }

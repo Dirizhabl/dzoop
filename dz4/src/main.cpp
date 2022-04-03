@@ -15,7 +15,6 @@ void zad1()
 
 	queue->print();
 
-	delete queue;
 }
 void zad2()
 {
@@ -38,13 +37,10 @@ void zad2()
 
 	dqueue_copy->print();
 
-	delete dqueue;
-	delete dqueue_copy;
-
 }
 int main()
 {
-	zad1();
+	//zad1();
 	zad2();
 	return 0;	
 }

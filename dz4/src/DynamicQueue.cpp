@@ -15,6 +15,7 @@ DynamicQueue::~DynamicQueue()
     while (!empty())
     {
         dequeue();
+        std::cout << empty() << std::endl;
     }
     
 }

@@ -18,13 +18,18 @@ CSLL::CSLL(const CSLL& c): head{nullptr}
 
 CSLL::~CSLL()
 {
-    while(!empty())
+    Node *it = head;
+    while(it->next != head)
+    {
         remove_from_head();
+        it = it->next;
+    }
+        
 }
 
 bool CSLL::empty() const 
 {
-    return head == nullptr;
+    return (head == nullptr);
 }
 
 void CSLL::prepend (double val)
@@ -53,6 +58,7 @@ void CSLL::append(double val)
 {
     prepend(val);
     head = head->next;
+    
 }
 
 void CSLL::print() const
@@ -62,17 +68,23 @@ void CSLL::print() const
 
     Node *it = head;
     
-    while (it->next != head)
+    do
     {
         std::cout << it->value << " ";
         it = it->next;
-    }
+    }while (it->next != head);
 }
 
 double CSLL::remove_from_head()
 {
     Node *it = head;
     double temp = head->value;
+    if(head->next == head)
+    {
+        head = nullptr;
+        delete it;
+        return temp;
+    }
     head = head->next;
     delete it;
     
