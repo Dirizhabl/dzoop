@@ -13,9 +13,9 @@ void zad3();
 
 int main()
 {
-	//zad1();
-	//zad2();
-	//zad3();
+	zad1();
+	zad2();
+	zad3();
 	return 0;
 }
 
@@ -38,7 +38,7 @@ void zad1()
 	std::sort(p_vec, p_vec+5);
 	std::reverse(p_vec, p_vec+5);
 
-	for (auto &&v : p_vec)
+	for (auto &v : p_vec)
 	{
 		v.print();
 	}
