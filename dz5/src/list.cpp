@@ -70,6 +70,7 @@ void list::reverse()
     prev = it;
     it = next;
     
+    head = head->next;
 
 }
 

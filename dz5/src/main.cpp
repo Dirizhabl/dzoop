@@ -8,8 +8,8 @@ void zad3();
 int main()
 {
 	//zad1();
-	//zad2();
-	zad3();
+	zad2();
+	//zad3();
 	return 0;
 }
 
